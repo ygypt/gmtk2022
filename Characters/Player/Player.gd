@@ -11,7 +11,7 @@ func _ready():
 #	weapon_slot.player = self
 
 func _process(delta: float):
-	var movevec = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	var movevec = Input.get_vector("move_left", "move_right", "move_up", "move_down")  #Dex: I didn't know this was a thing. Sweet Function.
 	move_vector = movevec
 	
 	var mouse_pos = get_global_mouse_position()

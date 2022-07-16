@@ -7,6 +7,7 @@ class_name Weapon
 
 onready var reload_timer : Timer = $ReloadTimer
 onready var firerate_timer : Timer = $FirerateTimer
+onready var semiauto_timer : Timer = $SemiautoTimer
 
 export var total_ammo := 1
 var current_ammo
@@ -31,7 +32,7 @@ func reload():
 # THIS FUNCTION IS KINDA MESSY RN BUT IT GETS THE JOB DONE
 
 func shoot(player):
-	if firerate_timer.time_left > 0 || reload_timer.time_left > 0:
+	if firerate_timer.time_left || reload_timer.time_left > 0:
 		return
 	
 	firerate_timer.start()
