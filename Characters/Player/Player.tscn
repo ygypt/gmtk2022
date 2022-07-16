@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Art_Assets/ProtoPlayerRight.png" type="Texture" id=1]
-[ext_resource path="res://Characters/StateMachine.gd" type="Script" id=2]
+[ext_resource path="res://Characters/Entity.gd" type="Script" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Walk_Right"
@@ -26,27 +26,25 @@ height = 6.0
 
 [node name="Player" type="Node2D"]
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+[node name="Entity" type="KinematicBody2D" parent="."]
 collision_mask = 14
+script = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
+[node name="Sprite" type="Sprite" parent="Entity"]
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 1 )
 hframes = 4
 frame = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Entity"]
 autoplay = "Walk_Right"
 anims/Walk_Right = SubResource( 1 )
 
-[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+[node name="Camera2D" type="Camera2D" parent="Entity"]
 current = true
 zoom = Vector2( 0.5, 0.5 )
 smoothing_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entity"]
 position = Vector2( 0, 0.5 )
 shape = SubResource( 2 )
-
-[node name="StateMachine" type="Node" parent="."]
-script = ExtResource( 2 )
