@@ -44,6 +44,8 @@ config/icon="res://icon.png"
 
 [display]
 
+window/size/width=960
+window/size/height=540
 mouse_cursor/custom_image="res://Art_Assets/ae9bbaf4-8c38-4c8b-a918-e7eb2dd9f4b9.png"
 mouse_cursor/custom_image_hotspot=Vector2( 24, 24 )
 window/stretch/mode="2d"
