@@ -1,6 +1,6 @@
 extends State
 
-export var dodge_speed := 150
+export var dodge_speed := 200
 
 var dodge_direction
 
@@ -16,7 +16,7 @@ func enter(entity : Player) -> Node:
 	return null
 
 func step(entity : Player) -> Node:
-	entity.velocity = -Vector2.RIGHT.rotated(dodge_direction) * dodge_speed
+	entity.velocity = Vector2.RIGHT.rotated(dodge_direction) * dodge_speed
 	
 	if not entity.anims.is_playing():
 		return $"../Idle"
