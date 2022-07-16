@@ -13,12 +13,11 @@ onready var look_vector := 0.0
 onready var velocity := Vector2.ZERO
 
 # STATE
-onready var current_state := $State/Idle
+onready var current_state
 
 # STATS
 export var health = 1
 export var speed = 100
-
 
 func change_state(new_state):
 	current_state.exit(self)
@@ -26,6 +25,9 @@ func change_state(new_state):
 	current_state.enter(self)
 
 func _process(delta):
+	
+	$Sprite.flip_h = !(look_vector <=  PI / 2 && look_vector > -(PI / 2))
+	
 	var new_state = current_state.step(self)
 	if new_state != null:
 		change_state(new_state)

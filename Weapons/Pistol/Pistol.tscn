@@ -1,7 +1,19 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource path="res://Weapons/Pistol/Pistol.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[node name="Pistol" type="Node2D"]
+script = ExtResource( 1 )
+total_ammo = 8
 
 [node name="ReloadTimer" type="Timer" parent="."]
+wait_time = 1.5
 
 [node name="FirerateTimer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 4, 0 )
+scale = Vector2( 0.240625, 0.05 )
+texture = ExtResource( 2 )
