@@ -32,7 +32,6 @@ collision_mask = 14
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 1 )
 hframes = 4
-frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
 autoplay = "Walk_Right"
@@ -44,5 +43,6 @@ zoom = Vector2( 0.5, 0.5 )
 smoothing_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+visible = false
 position = Vector2( 0, 0.5 )
 shape = SubResource( 2 )
