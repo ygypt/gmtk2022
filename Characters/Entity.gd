@@ -10,8 +10,9 @@ onready var states := {
 
 onready var current_state : State = IdleState.new()
 onready var statistics := Statistics.new()
-onready var move_vector := Vector2.ZERO
 
+onready var move_vector := Vector2.ZERO
+onready var look_vector := Vector2.ZERO
 onready var velocity := Vector2.ZERO
 
 func change_state(new_state):
@@ -26,5 +27,5 @@ func step():
 		change_state(new_state)
 
 func fixstep():
-	print(velocity)
+#	print(velocity)
 	move_and_slide(velocity)
