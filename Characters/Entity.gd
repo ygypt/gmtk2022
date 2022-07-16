@@ -3,29 +3,32 @@ class_name Entity
 func get_class(): return "Entity"
 func is_class(name): return name == "Entity"
 
-onready var states := {
-  State.IDLE : IdleState,
-  State.MOVE : MoveState,
-}
+# SUPER CLASS OF ALL ENTITIES. CAN BE USED FOR PLAYER, ENEMIES, AND PROJECTILES..
+# PRETTY MUCH ANYTHING THAT MOVES
+# ALL ENTITIES MUST HAVE /STATE/IDLE AS DEFAULT BEHAVIOUR
 
-onready var current_state : State = IdleState.new()
-onready var statistics := Statistics.new()
-
+# INPUT / MOVEMENT
 onready var move_vector := Vector2.ZERO
-onready var look_vector := Vector2.ZERO
+onready var look_vector := 0.0
 onready var velocity := Vector2.ZERO
+
+# STATE
+onready var current_state := $State/Idle
+
+# STATS
+export var health = 1
+export var speed = 100
+
 
 func change_state(new_state):
 	current_state.exit(self)
-	current_state = states[new_state].new()
-	print(current_state.get_class())
+	current_state = new_state
 	current_state.enter(self)
 
-func step():
+func _process(delta):
 	var new_state = current_state.step(self)
-	if new_state != State.NULL:
+	if new_state != null:
 		change_state(new_state)
 
-func fixstep():
-#	print(velocity)
+func _physics_process(delta):
 	move_and_slide(velocity)

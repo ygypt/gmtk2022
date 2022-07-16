@@ -1,25 +1,27 @@
-extends Node2D
+extends Entity
 class_name Player
 func get_class(): return "Player"
 func is_class(name): return name == "Player"
 
-
-onready var entity : Entity = $Entity
+onready var anims : AnimationPlayer = $AnimationPlayer
 
 func _process(delta: float):
-	var vecx = Input.get_axis("move_left", "move_right")
-	var vecy = Input.get_axis("move_up", "move_down")
-	var move_vector = Vector2(vecx, vecy)
-	entity.move_vector = move_vector
+	var movevec = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	move_vector = movevec
 	
-	var mouse_pos = get_viewport().get_mouse_position()
-	var look_vector = global_position.direction_to(mouse_pos)
+	var mouse_pos = get_global_mouse_position()
+	# THIS MIGHT BE BACKWARDS
+	var lookvec = global_position.angle_to_point(mouse_pos)
+#	var lookvec = mouse_pos.angle_to_point(global_position)
+	look_vector = lookvec
 	
-	print(look_vector)
+	# SPRITE FLIPPING HERE
 	
-	entity.step()
 	
-func _physics_process(delta: float):
-	entity.fixstep()
-	position = entity.position
+	
+	# PLAYER EXTENDS ENTITY, SO WE INHERIT ALL OF ENTITY'S FUNCTIONS, BUT 
+	# WE'VE OVERRIDEN _PROCESS HERE, SO TO MAKE SURE THAT THE O.G. ENTITY
+	# PROCESS STILL RUNS WE RUN "DOT _PROCESS", THE "DOT" CALLS THE SAME FUNCTION
+	# FROM THE SUPERCLASS
+	._process(delta)
 
