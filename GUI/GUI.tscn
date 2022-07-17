@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://GUI/GUI.gd" type="Script" id=1]
 [ext_resource path="res://Art_Assets/Spr_d4HEALTH_strip37.png" type="Texture" id=2]
@@ -105,6 +105,10 @@ tracks/0/keys = {
 "values": [ 33, 36, 36 ]
 }
 
+[sub_resource type="DynamicFont" id=8]
+size = 27
+font_data = ExtResource( 3 )
+
 [sub_resource type="DynamicFont" id=7]
 size = 40
 font_data = ExtResource( 3 )
@@ -141,46 +145,42 @@ margin_left = 696.0
 margin_top = 399.0
 margin_right = -13.0
 margin_bottom = -11.0
+grow_horizontal = 0
+grow_vertical = 0
 alignment = 2
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="AmmoLeftLabel" type="Label" parent="Control/HBoxContainer"]
-margin_top = 15.0
-margin_right = 18.0
-margin_bottom = 29.0
+margin_top = 4.0
+margin_right = 36.0
+margin_bottom = 35.0
 grow_horizontal = 0
-text = "##"
+custom_fonts/font = SubResource( 8 )
+text = "10"
 align = 1
 valign = 1
 
-[node name="AmmoLabel2" type="Label" parent="Control/HBoxContainer"]
-margin_left = 22.0
-margin_top = 15.0
-margin_right = 27.0
-margin_bottom = 29.0
+[node name="Slash" type="Label" parent="Control/HBoxContainer"]
+margin_left = 40.0
+margin_top = 4.0
+margin_right = 53.0
+margin_bottom = 35.0
+grow_horizontal = 0
+custom_fonts/font = SubResource( 8 )
 text = "/"
 align = 1
 valign = 1
 
 [node name="AmmoTotalLabel" type="Label" parent="Control/HBoxContainer"]
-margin_left = 31.0
-margin_top = 15.0
-margin_right = 49.0
-margin_bottom = 29.0
+margin_left = 57.0
+margin_top = 4.0
+margin_right = 93.0
+margin_bottom = 35.0
 grow_horizontal = 0
-text = "##"
-align = 1
-valign = 1
-
-[node name="ScoreDisp" type="Label" parent="Control/HBoxContainer"]
-margin_left = 53.0
-margin_right = 294.0
-margin_bottom = 45.0
-grow_horizontal = 0
-custom_fonts/font = SubResource( 7 )
-text = "Numbers"
+custom_fonts/font = SubResource( 8 )
+text = "10"
 align = 1
 valign = 1
 

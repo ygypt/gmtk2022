@@ -6,11 +6,13 @@ func is_class(name): return name == "Player"
 onready var anims : AnimationPlayer = $AnimationPlayer
 onready var weapon := $Pistol
 onready var can_shoot := true
+onready var GUI := $PlayerCamera/GUI
 onready var hurt_angle := 0.0
 
 func _ready():
 	current_state = $State/Idle
 	$Hurtbox.connect("area_entered", self, "_on_Hurtbox_area_entered")
+	health = 4
 #	weapon_slot.player = self
 
 func _process(delta: float):
@@ -24,6 +26,10 @@ func _process(delta: float):
 	look_angle = lookvec
 	
 	weapon.step(self)
+	GUI.step(self)
+	
+	if health >4: 
+		health = 4
 	
 #	for area in $Hurtbox.get_overlapping_areas():
 #		if area is Projectile:
