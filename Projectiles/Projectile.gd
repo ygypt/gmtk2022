@@ -24,6 +24,10 @@ func _process(delta):
 	var new_state = current_state.step(self)
 	if new_state != null:
 		change_state(new_state)
+	for body in get_overlapping_bodies():
+		if body.name == "WallsAndFloors":
+			queue_free()
+	
 
 func _physics_process(delta):
 	position += velocity * delta

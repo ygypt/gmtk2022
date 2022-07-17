@@ -4,7 +4,7 @@ func get_class(): return "Player"
 func is_class(name): return name == "Player"
 
 onready var anims : AnimationPlayer = $AnimationPlayer
-onready var weapon := $Pistol
+onready var weapon : Weapon = $Pistol
 onready var can_shoot := true
 onready var GUI := $PlayerCamera/GUI
 onready var hurt_angle := 0.0
@@ -61,11 +61,8 @@ func take_hit(node: Node):
 	change_state($State/Hurt)
 
 func _on_Hurtbox_area_entered(area):
-	print(area)
 	if area.is_in_group("Projectile"):
-		print("in")
 		if area.shooter != self:
-			print("deep")
 			take_hit(area)
 			return
 			

@@ -17,4 +17,3 @@ func _process(delta):
 		if body.shooter.is_in_group("Player"):
 			health -= body.damage
 			body.queue_free()
-			print(health)
