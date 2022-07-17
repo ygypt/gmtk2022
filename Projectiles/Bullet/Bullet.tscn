@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Art_Assets/Bullet.png" type="Texture" id=1]
+[ext_resource path="res://Art_Assets/Weapons/bullet.png" type="Texture" id=1]
 [ext_resource path="res://Projectiles/Bullet/Bullet.gd" type="Script" id=2]
 [ext_resource path="res://Projectiles/Bullet/Zoom.gd" type="Script" id=3]
 
@@ -35,9 +35,10 @@ flag_disable_z = true
 direction = Vector3( 100, 0, 0 )
 spread = 0.0
 gravity = Vector3( 0, 0, 0 )
-initial_velocity = 88.8
+initial_velocity = 20.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
+scale = 0.25
 
 [sub_resource type="Animation" id=4]
 length = 0.001
@@ -78,8 +79,8 @@ anims/Bullet_Movement = SubResource( 2 )
 anims/RESET = SubResource( 4 )
 
 [node name="BulletTrail" type="Particles2D" parent="."]
-amount = 11
-lifetime = 3.0
+amount = 2
+lifetime = 2.0
 randomness = 0.45
 local_coords = false
 process_material = SubResource( 3 )
