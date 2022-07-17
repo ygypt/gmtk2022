@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://GUI/GUI.gd" type="Script" id=1]
 [ext_resource path="res://Art_Assets/Spr_d4HEALTH_strip37.png" type="Texture" id=2]
@@ -113,6 +113,12 @@ font_data = ExtResource( 3 )
 size = 40
 font_data = ExtResource( 3 )
 
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=10]
+default_font = SubResource( 9 )
+
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource( 1 )
 
@@ -197,3 +203,8 @@ custom_fonts/font = SubResource( 7 )
 text = "Numbers"
 align = 1
 valign = 1
+
+[node name="score" type="Label" parent="Control"]
+margin_right = 40.0
+margin_bottom = 14.0
+theme = SubResource( 10 )

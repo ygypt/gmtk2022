@@ -32,8 +32,9 @@ func step(player : Player):
 		elif current_hp == 1: ANIMS.play_backwards("HealthOneToTwo")
 		elif current_hp == 0: ANIMS.play_backwards("HealthStart")
 	
-	
-	
+	# HERE
+	for level in get_tree().get_nodes_in_group("Level"):
+		$score.text = level.score
 	
 	#this happens last
 	old_hp = current_hp
