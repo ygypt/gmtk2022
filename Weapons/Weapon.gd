@@ -25,5 +25,5 @@ func reload():
 
 # THIS FUNCTION IS KINDA MESSY RN BUT IT GETS THE JOB DONE
 func step(entity):
-	rotation = entity.look_vector
-	$Sprite.flip_v = !(entity.look_vector <=  PI / 2 && entity.look_vector > -(PI / 2))
+	rotation = entity.look_angle
+	$Sprite.flip_v = !(entity.look_angle <=  PI / 2 && entity.look_angle > -(PI / 2))
