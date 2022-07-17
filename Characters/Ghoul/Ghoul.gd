@@ -5,7 +5,7 @@ func _ready():
 
 func _process(delta):
 	for body in $ProjHurtbox.get_overlapping_areas():
-		if body.shooter.is_in_group("Paaalayer"):
+		if body.shooter.is_in_group("Player"):
 			health -= body.damage
 			body.queue_free()
 			if health<=0: 
