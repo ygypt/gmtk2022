@@ -14,10 +14,10 @@ func _process(delta):
 		player_distance = abs((player.position - position).length())
 		angle_to_player = get_angle_to(player.position)
 	
-	for body in $ProjHurtbox.get_overlapping_areas():
-		if body == null: 
-			return
-		
-		if body.shooter.is_in_group("Player"):
-			health -= body.damage
-			body.queue_free()
+	for area in $ProjHurtbox.get_overlapping_areas():
+		if area.is_inside_tree():
+			if area.shooter is Player:
+				health -= area.damage
+				area.queue_free()
+				if health<=0: 
+					queue_free()

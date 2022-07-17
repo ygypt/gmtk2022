@@ -4,7 +4,6 @@ class_name BulletProjectile
 
 var bullet_dir
 
-
 func _ready():
 	current_state = $State/Zoom
 	$AnimationPlayer.play("Bullet_Movement", -1, rand_range(-1,1), false)
