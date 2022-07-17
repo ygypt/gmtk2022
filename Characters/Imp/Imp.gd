@@ -18,6 +18,6 @@ func _process(delta):
 		if body == null: 
 			return
 		
-		if body.shwooter.is_in_group("Player"):
+		if body.shooter.is_in_group("Player"):
 			health -= body.damage
 			body.queue_free()
