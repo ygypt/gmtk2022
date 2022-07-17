@@ -4,6 +4,9 @@
 [ext_resource path="res://Art_Assets/Enemies/ghoul2.png" type="Texture" id=2]
 [ext_resource path="res://Characters/Ghoul/States/Chase.gd" type="Script" id=3]
 
+[sub_resource type="CapsuleShape2D" id=5]
+height = 14.0
+
 [sub_resource type="CapsuleShape2D" id=6]
 radius = 2.0
 height = 4.0
@@ -24,9 +27,6 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=5]
-height = 14.0
-
 [sub_resource type="CapsuleShape2D" id=7]
 radius = 9.0
 height = 2.0
@@ -37,6 +37,14 @@ collision_mask = 7
 script = ExtResource( 1 )
 health = 18
 speed = 35
+
+[node name="ProjHurtbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProjHurtbox"]
+position = Vector2( 0, -16 )
+shape = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -51,14 +59,6 @@ playing = true
 
 [node name="Chase" type="Node" parent="State"]
 script = ExtResource( 3 )
-
-[node name="ProjHurtbox" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 32
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ProjHurtbox"]
-position = Vector2( 0, -16 )
-shape = SubResource( 5 )
 
 [node name="Hitbox" type="Area2D" parent="." groups=["Hitbox"]]
 collision_layer = 2
