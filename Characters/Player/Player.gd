@@ -44,6 +44,9 @@ func _process(delta: float):
 	# WE'VE OVERRIDEN _PROCESS HERE, SO TO MAKE SURE THAT THE O.G. ENTITY
 	# PROCESS STILL RUNS I RUN "DOT _PROCESS", THE "DOT" CALLS THE SAME FUNCTION
 	# FROM THE SUPERCLASS
+	if health <= 0:
+		get_tree().change_scene("res://Menu.tscn")
+	
 	._process(delta)
 
 func take_hit(node: Node):
