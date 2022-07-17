@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Weapons/Pistol/Pistol.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Art_Assets/Weapons/pistol.png" type="Texture" id=2]
 
 [node name="Pistol" type="Node2D"]
 script = ExtResource( 1 )
@@ -16,6 +16,7 @@ wait_time = 0.2
 [node name="SemiautoTimer" type="Timer" parent="."]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 4, 0 )
-scale = Vector2( 0.240625, 0.05 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 2 )
+offset = Vector2( -20, 5 )
+vframes = 2
