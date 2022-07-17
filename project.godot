@@ -57,6 +57,7 @@ config/icon="res://icon.png"
 [autoload]
 
 ProjectileManager="*res://Projectiles/ProjectileManager.gd"
+Scoreboard="*res://scoreboard.gd"
 
 [display]
 
