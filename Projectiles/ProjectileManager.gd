@@ -11,9 +11,11 @@ func spawn_projectile(
 		damage: int = 1
 	):
 	
+	projectile.shooter = shooter
+	
 	add_child(projectile)
+	
 	projectile.position = global_pos
 	projectile.look_angle = direction
-	projectile.shooter = shooter
 	projectile.damage = damage
 	projectile.add_to_group("Projectile")

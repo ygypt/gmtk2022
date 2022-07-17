@@ -33,8 +33,13 @@ func step(player : Player):
 		elif current_hp == 0: ANIMS.play_backwards("HealthStart")
 	
 	# HERE
+<<<<<<< Updated upstream
 	var level = player.get_parent()
 	$Control/ScoreDisp.text = str(level.score)
+=======
+#	for level in get_tree().get_nodes_in_group("Level"):
+#		$score.text = str(level.score)
+>>>>>>> Stashed changes
 	
 	#this happens last
 	old_hp = current_hp
