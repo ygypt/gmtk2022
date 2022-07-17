@@ -55,6 +55,7 @@ shape = SubResource( 6 )
 position = Vector2( 0, -16 )
 frames = SubResource( 4 )
 animation = "chase"
+frame = 1
 playing = true
 
 [node name="State" type="Node" parent="."]
