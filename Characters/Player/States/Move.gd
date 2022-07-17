@@ -1,5 +1,9 @@
 extends State
 
+func enter(entity: Player) -> Node:
+	entity.anims.play("Move")
+	return null
+
 func step(entity) -> Node:
 	entity.velocity = entity.move_vector * entity.speed
 	

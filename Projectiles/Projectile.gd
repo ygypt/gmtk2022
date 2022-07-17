@@ -6,7 +6,7 @@ var shooter : Entity
 
 # INPUT / MOVEMENT
 onready var move_vector := Vector2.ZERO
-onready var look_angle := 0.0
+onready var look_vector := 0.0
 onready var velocity := Vector2.ZERO
 
 # STATE
