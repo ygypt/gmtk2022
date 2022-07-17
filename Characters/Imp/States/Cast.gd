@@ -5,7 +5,6 @@ var fireball = preload("res://Projectiles/Fireball/Fireball.tscn")
 func enter(entity):
 	entity.anims.play("cast")
 	$CastTimer.start()
-	print("die")
 	entity.velocity = Vector2.ZERO
 
 func step(entity):

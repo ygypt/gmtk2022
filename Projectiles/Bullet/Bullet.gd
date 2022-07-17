@@ -22,4 +22,3 @@ func _process(delta):
 	
 	$BulletTrail.process_material.direction = Vector3(move_vector.x, move_vector.y, 0)
 	
-	var bodies = get_overlapping_bodies()
