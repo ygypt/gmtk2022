@@ -1,6 +1,6 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Art_Assets/ProtoPlayerRight.png" type="Texture" id=1]
+[ext_resource path="res://Art_Assets/Player/DICEY.png" type="Texture" id=1]
 [ext_resource path="res://Characters/Player/Player.gd" type="Script" id=2]
 [ext_resource path="res://Characters/Player/States/Idle.gd" type="Script" id=3]
 [ext_resource path="res://Characters/Player/States/Move.gd" type="Script" id=4]
@@ -44,8 +44,8 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=1]
-resource_name = "Move"
-length = 0.4
+resource_name = "Move_down"
+length = 0.2
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -54,15 +54,32 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 3 ]
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Move_up"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 3, 2 ]
 }
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 4.0
-height = 0.0
+radius = 2.0
+height = 2.0
 
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 14
@@ -70,16 +87,17 @@ script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -7 )
-scale = Vector2( 0.4, 0.4 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-hframes = 4
-frame = 3
+hframes = 2
+vframes = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
 anims/Dodge = SubResource( 4 )
 anims/Idle = SubResource( 3 )
-anims/Move = SubResource( 1 )
+anims/Move_down = SubResource( 1 )
+anims/Move_up = SubResource( 5 )
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
 current = true
@@ -88,7 +106,8 @@ smoothing_enabled = true
 script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -2 )
+position = Vector2( 0, -1 )
+rotation = 1.5708
 shape = SubResource( 2 )
 
 [node name="State" type="Node" parent="."]
