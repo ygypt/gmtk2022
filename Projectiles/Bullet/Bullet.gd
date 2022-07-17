@@ -12,3 +12,8 @@ func _ready():
 	yield(get_tree(),"idle_frame")
 	yield(get_tree(),"idle_frame")
 	$BulletTrail.process_material.direction = Vector3(-velocity.x,-velocity.y,0)
+
+func _process(delta):
+	._process(delta)
+	
+	var bodies = get_overlapping_bodies()

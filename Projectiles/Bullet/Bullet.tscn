@@ -54,11 +54,10 @@ tracks/0/keys = {
 "values": [ SubResource( 3 ) ]
 }
 
-[node name="Bullet" type="KinematicBody2D"]
+[node name="Bullet" type="Area2D"]
 collision_layer = 32
 collision_mask = 6
 script = ExtResource( 2 )
-speed = 200
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0.00539303, -0.0152988 )

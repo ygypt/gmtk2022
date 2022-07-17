@@ -8,6 +8,10 @@
 [ext_resource path="res://Weapons/Pistol/Pistol.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Characters/Player/PlayerCamera.gd" type="Script" id=8]
 
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 2.0
+height = 2.0
+
 [sub_resource type="Animation" id=4]
 resource_name = "Dodge"
 length = 0.166667
@@ -27,7 +31,8 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=3]
 resource_name = "Idle"
-length = 0.0166667
+length = 0.0666668
+loop = true
 step = 0.0166667
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -76,14 +81,15 @@ tracks/0/keys = {
 "values": [ 3, 2 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=2]
-radius = 2.0
-height = 2.0
-
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 14
 script = ExtResource( 2 )
 speed = 80
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -1 )
+rotation = 1.5708
+shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -7 )
@@ -105,11 +111,6 @@ current = true
 zoom = Vector2( 0.3, 0.3 )
 smoothing_enabled = true
 script = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -1 )
-rotation = 1.5708
-shape = SubResource( 2 )
 
 [node name="State" type="Node" parent="."]
 

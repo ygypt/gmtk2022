@@ -1,9 +1,29 @@
-extends Entity
+extends Area2D
 class_name Projectile
 
-# A PROJECTILE IS A STRAIGHT UP ENTITY, WITH SOME BONUS STATS LIKE THE DMG IT
-# DEALS AND A POINTER TO THE ENTITY THAT SHOT IT
-
+# who dun shot me
 var shooter : Entity
 
-export var dmg := 1
+# INPUT / MOVEMENT
+onready var move_vector := Vector2.ZERO
+onready var look_vector := 0.0
+onready var velocity := Vector2.ZERO
+
+# STATE
+onready var current_state
+
+export var speed := 100
+var damage := 1
+
+func change_state(new_state):
+	current_state.exit(self)
+	current_state = new_state
+	current_state.enter(self)
+
+func _process(delta):
+	var new_state = current_state.step(self)
+	if new_state != null:
+		change_state(new_state)
+
+func _physics_process(delta):
+	position += velocity * delta
