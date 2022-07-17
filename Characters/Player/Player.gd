@@ -1,15 +1,20 @@
 extends Entity
 class_name Player
+
 func get_class(): return "Player"
 func is_class(name): return name == "Player"
 
+
 onready var anims : AnimationPlayer = $AnimationPlayer
-onready var weapon := $Pistol
+onready var weapon : Weapon = $Pistol
+onready var GUI := $CamViewportNode/PlayerCamera/GUI
 onready var can_shoot := true
+
 
 func _ready():
 	current_state = $State/Idle
 #	weapon_slot.player = self
+
 
 func _process(delta: float):
 	var movevec = Input.get_vector("move_left", "move_right", "move_up", "move_down")  #Dex: I didn't know this was a thing. Sweet Function.
@@ -22,6 +27,7 @@ func _process(delta: float):
 	look_vector = lookvec
 	
 	weapon.step(self)
+	GUI.step(self)
 	
 	# PLAYER EXTENDS ENTITY, SO WE INHERIT ALL OF ENTITY'S FUNCTIONS, BUT 
 	# WE'VE OVERRIDEN _PROCESS HERE, SO TO MAKE SURE THAT THE O.G. ENTITY
