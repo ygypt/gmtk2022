@@ -35,10 +35,9 @@ flag_disable_z = true
 direction = Vector3( 100, 0, 0 )
 spread = 0.0
 gravity = Vector3( 0, 0, 0 )
-initial_velocity = 20.0
+initial_velocity = 88.8
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale = 0.25
 
 [sub_resource type="Animation" id=4]
 length = 0.001
@@ -79,9 +78,13 @@ anims/Bullet_Movement = SubResource( 2 )
 anims/RESET = SubResource( 4 )
 
 [node name="BulletTrail" type="Particles2D" parent="."]
-amount = 2
-lifetime = 2.0
-randomness = 0.45
+visible = false
+scale = Vector2( 0.5, 0.5 )
+amount = 5
+lifetime = 1.5
+speed_scale = 3.35
+explosiveness = 0.13
+randomness = 0.6
 local_coords = false
 process_material = SubResource( 3 )
 texture = ExtResource( 1 )

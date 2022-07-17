@@ -4,7 +4,8 @@ func get_class(): return "Player"
 func is_class(name): return name == "Player"
 
 onready var anims : AnimationPlayer = $AnimationPlayer
-onready var weapon_slot := $WeaponSlot
+onready var weapon := $Pistol
+onready var can_shoot := true
 
 func _ready():
 	current_state = $State/Idle
@@ -20,6 +21,7 @@ func _process(delta: float):
 	var lookvec = mouse_pos.angle_to_point(global_position)
 	look_vector = lookvec
 	
+	weapon.step(self)
 	
 	# PLAYER EXTENDS ENTITY, SO WE INHERIT ALL OF ENTITY'S FUNCTIONS, BUT 
 	# WE'VE OVERRIDEN _PROCESS HERE, SO TO MAKE SURE THAT THE O.G. ENTITY
