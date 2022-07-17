@@ -9,7 +9,6 @@ var coef_hp = 0
 
 func _ready():
 	$Sprite.visible = false
-	spawn()
 
 func spawn():
 	var player_distance = 0
@@ -29,16 +28,11 @@ func spawn():
 	spawn.position = position
 	spawn.health += .01 * coef_hp
 	
-	
+	print(spawn)
 	get_parent().add_child(spawn)
-
-	$Timer.start()
 	
 	randomize()
 	coef_hp += ceil(rand_range(1, 6))
 	
 
-func _process(delta):
-	if $Timer.is_stopped():
-		spawn()
-	pass
+
