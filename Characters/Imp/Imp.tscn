@@ -10,14 +10,17 @@ radius = 5.99999
 height = 4.00002
 
 [sub_resource type="AtlasTexture" id=8]
+flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=9]
+flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=10]
+flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 64, 0, 32, 32 )
 
@@ -35,10 +38,11 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=5]
-radius = 15.0
-height = 4.0
+radius = 12.0
+height = 4.66667
 
 [node name="Imp" type="KinematicBody2D"]
+scale = Vector2( 0.75, 0.75 )
 collision_layer = 2
 collision_mask = 5
 script = ExtResource( 1 )
@@ -74,7 +78,7 @@ collision_layer = 0
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ProjHurtbox"]
-position = Vector2( 0, -15 )
+position = Vector2( 0, -17.6667 )
 shape = SubResource( 5 )
 
 [node name="CastCooldown" type="Timer" parent="."]
