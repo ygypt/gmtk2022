@@ -44,6 +44,7 @@ func _process(delta):
 		change_state(new_state)
 	
 	if health <= 0:
+		get_parent().score += 1
 		queue_free()
 
 func _physics_process(delta):
