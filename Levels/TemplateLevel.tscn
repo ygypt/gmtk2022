@@ -1,10 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Tiles/Tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Characters/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Spawners/EnemySpawner.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/TemplateLevel.gd" type="Script" id=4]
 
 [node name="TemplateLevel" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
 
 [node name="WallsAndFloors" type="TileMap" parent="."]
 z_index = -1
