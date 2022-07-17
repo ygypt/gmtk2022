@@ -3,7 +3,6 @@
 [ext_resource path="res://Tiles/Tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Characters/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Spawners/EnemySpawner.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Music/Bowl of the Spice[Main Combat].wav" type="AudioStream" id=4]
 [ext_resource path="res://Levels/TemplateLevel.gd" type="Script" id=4]
 
 [node name="TemplateLevel" type="Node2D"]
@@ -28,7 +27,6 @@ position = Vector2( 248, 102 )
 health = 100
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
 volume_db = -20.0
 autoplay = true
 
