@@ -1,7 +1,7 @@
 extends Node2D
 
-var ghoul = preload("res://Characters/Ghoul/Ghoul.tscn")
-var imp = preload("res://Characters/Imp/Imp.tscn")
+onready var ghoul = preload("res://Characters/Ghoul/Ghoul.tscn")
+onready var imp = preload("res://Characters/Imp/Imp.tscn")
 
 var spawn
 var game
