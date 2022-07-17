@@ -14,7 +14,12 @@ func step(player):
 	
 	if Input.is_action_just_pressed("shoot"):
 		var new_bullet = bullet.instance()
-		ProjectileManager.spawn_projectile(new_bullet, global_position, player.look_vector, player)
+		ProjectileManager.spawn_projectile(
+			new_bullet,
+			global_position,
+			player.look_vector,
+			player,
+			3)
 	
 	if current_ammo <= 0:
 		reload()

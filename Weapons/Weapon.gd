@@ -12,6 +12,8 @@ onready var firerate_timer : Timer = $FirerateTimer
 export var total_ammo := 1
 onready var current_ammo := total_ammo
 
+export var camera_shake := 1
+
 func _ready():
 	for child in get_children():
 		if child is Timer:
