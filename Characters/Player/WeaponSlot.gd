@@ -1,10 +1,17 @@
 extends Node2D
 
+const MOUSE_CAM_MOD = .4
+
 onready var player : Player = get_parent()
 onready var weapon : Weapon = get_child(0)
+var cursor_lposition : Vector2 
+
+
+#onready var cursor_lposition
 
 func _process(delta):
-	rotation = player.look_vector
+#	rotation = player.look_vector
+	look_at(get_local_mouse_position())
 	
 	if Input.is_action_just_pressed("reload"):
 		weapon.reload()
@@ -14,3 +21,6 @@ func _process(delta):
 	
 #	if Input.is_action_just_pressed("interact"):
 #		equip new weapon that ur hovering over
+	
+	cursor_lposition = get_local_mouse_position()
+	global_position = player.global_position + (cursor_lposition * MOUSE_CAM_MOD)
