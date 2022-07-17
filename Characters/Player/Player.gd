@@ -13,6 +13,7 @@ func _ready():
 	current_state = $State/Idle
 	$Hurtbox.connect("area_entered", self, "_on_Hurtbox_area_entered")
 	health = 4
+	speed = 80
 #	weapon_slot.player = self
 
 func _process(delta: float):

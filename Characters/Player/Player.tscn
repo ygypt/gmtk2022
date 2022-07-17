@@ -172,6 +172,7 @@ script = ExtResource( 4 )
 script = ExtResource( 5 )
 
 [node name="Cooldown" type="Timer" parent="State/Dodge"]
+wait_time = 3.0
 one_shot = true
 
 [node name="Hurt" type="Node" parent="State"]

@@ -7,6 +7,7 @@ onready var anims : AnimatedSprite = $Sprite
 
 func _ready():
 	current_state = $State/Chase
+	
 
 func _process(delta):
 	for player in get_tree().get_nodes_in_group("Player"):
