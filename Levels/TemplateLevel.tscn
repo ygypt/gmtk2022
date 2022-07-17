@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Tiles/Tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Characters/Player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Characters/Ghoul/Ghoul.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Characters/Imp/Imp.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Spawners/EnemySpawner.tscn" type="PackedScene" id=3]
 
 [node name="TemplateLevel" type="Node2D"]
 
@@ -21,13 +20,16 @@ tile_data = PoolIntArray( -983033, -536870911, 65537, -983032, -536870911, 3, -9
 position = Vector2( 248, 102 )
 health = 100
 
-[node name="Ghoul" parent="." instance=ExtResource( 3 )]
-position = Vector2( 243, 55 )
-health = 20
-speed = 35
-
-[node name="Imp" parent="." instance=ExtResource( 4 )]
-position = Vector2( 196, 100 )
-health = 10
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="EnemySpawner" parent="." instance=ExtResource( 3 )]
+position = Vector2( -75, 94 )
+
+[node name="EnemySpawner2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 268, -241 )
+
+[node name="EnemySpawner3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 612, 94 )
+
+[node name="EnemySpawner4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 272, 439 )
