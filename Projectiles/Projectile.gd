@@ -12,7 +12,7 @@ onready var velocity := Vector2.ZERO
 # STATE
 onready var current_state
 
-export var speed := 100
+export var speed := 200
 var damage := 1
 
 func change_state(new_state):
