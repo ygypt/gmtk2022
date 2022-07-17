@@ -13,6 +13,8 @@ func step(player):
 		reload()
 	
 	if Input.is_action_just_pressed("shoot"):
+		current_ammo -= 1
+		
 		var new_bullet = bullet.instance()
 		ProjectileManager.spawn_projectile(
 			new_bullet,
