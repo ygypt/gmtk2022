@@ -24,10 +24,8 @@ health = 100
 [node name="Ghoul" parent="." instance=ExtResource( 3 )]
 position = Vector2( 243, 55 )
 health = 20
-speed = 35
 
 [node name="Imp" parent="." instance=ExtResource( 4 )]
 position = Vector2( 196, 100 )
-health = 10
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
