@@ -54,7 +54,7 @@ tracks/0/keys = {
 "values": [ SubResource( 3 ) ]
 }
 
-[node name="Bullet" type="Area2D"]
+[node name="Bullet" type="Area2D" groups=["Bullet"]]
 collision_layer = 32
 collision_mask = 6
 script = ExtResource( 2 )

@@ -15,9 +15,8 @@ func _process(delta):
 		angle_to_player = get_angle_to(player.position)
 	
 	for area in $ProjHurtbox.get_overlapping_areas():
-		if area.is_inside_tree():
-			if area.shooter is Player:
-				health -= area.damage
-				area.queue_free()
-				if health<=0: 
-					queue_free()
+		if area is BulletProjectile:
+			health -= area.damage
+			area.queue_free()
+			if health<=0: 
+				queue_free()
