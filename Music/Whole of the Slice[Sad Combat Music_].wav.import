@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Whole of the Slice[Sad Combat Music_].wav-a3892b23df5422f7a7c71ff3df18263c.sample"
+
+[deps]
+
+source_file="res://Music/Whole of the Slice[Sad Combat Music_].wav"
+dest_files=[ "res://.import/Whole of the Slice[Sad Combat Music_].wav-a3892b23df5422f7a7c71ff3df18263c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

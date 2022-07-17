@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Troll of the Vice[Main Menu Theme Final].wav-1778a37f7872579b9a891b25cbb4580d.sample"
+
+[deps]
+
+source_file="res://Music/Troll of the Vice[Main Menu Theme Final].wav"
+dest_files=[ "res://.import/Troll of the Vice[Main Menu Theme Final].wav-1778a37f7872579b9a891b25cbb4580d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
