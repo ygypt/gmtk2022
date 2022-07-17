@@ -2,10 +2,6 @@ extends Weapon
 
 var bullet = preload("res://Projectiles/Bullet/Bullet.tscn")
 
-#func fire(player):
-#	var new_bullet = bullet.instance()
-#	ProjectileManager.spawn_projectile(new_bullet, global_position, player.look_vector, player)
-
 func step(player):
 	.step(player) # RUN THE SUPERCLASS STEP SO WE GET ROTATION STUFF
 	if firerate_timer.time_left || reload_timer.time_left > 0:
