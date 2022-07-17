@@ -18,10 +18,11 @@ func step(player):
 		var new_bullet = bullet.instance()
 		ProjectileManager.spawn_projectile(
 			new_bullet,
-			global_position,
+			global_position + (Vector2.RIGHT.rotated(player.look_angle)*Vector2(9,11)),
 			player.look_angle,
 			player,
-			3)
+			3
+			)
 	
 	if current_ammo <= 0:
 		reload()

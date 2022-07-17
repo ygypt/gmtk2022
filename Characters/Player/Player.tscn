@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Art_Assets/Player/DICEY.png" type="Texture" id=1]
 [ext_resource path="res://Characters/Player/Player.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Characters/Player/States/Hurt.gd" type="Script" id=6]
 [ext_resource path="res://Weapons/Pistol/Pistol.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Characters/Player/PlayerCamera.gd" type="Script" id=8]
+[ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=9]
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 0.999996
@@ -154,7 +155,10 @@ anims/Roll_up = SubResource( 7 )
 current = true
 zoom = Vector2( 0.3, 0.3 )
 smoothing_enabled = true
+smoothing_speed = 10.0
 script = ExtResource( 8 )
+
+[node name="GUI" parent="PlayerCamera" instance=ExtResource( 9 )]
 
 [node name="State" type="Node" parent="."]
 

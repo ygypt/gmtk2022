@@ -8,6 +8,9 @@ class_name Weapon
 onready var reload_timer : Timer = $ReloadTimer
 onready var firerate_timer : Timer = $FirerateTimer
 #onready var semiauto_timer : Timer = $SemiautoTimer
+var cursor_lposition : Vector2
+const MOUSE_CAM_MOD : float = 0.05
+
 
 export var total_ammo := 1
 onready var current_ammo := total_ammo
@@ -27,3 +30,5 @@ func reload():
 func step(entity):
 	rotation = entity.look_angle
 	$Sprite.flip_v = !(entity.look_angle <=  PI / 2 && entity.look_angle > -(PI / 2))
+	cursor_lposition = entity.get_local_mouse_position()
+	global_position = entity.global_position + (cursor_lposition * MOUSE_CAM_MOD)
