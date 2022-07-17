@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Whole of the Slice[Sad Combat Music_]LOOP-NO INTRO.wav-07e12c35bd652a2854a77d727452409f.sample"
+
+[deps]
+
+source_file="res://Music/Whole of the Slice[Sad Combat Music_]LOOP-NO INTRO.wav"
+dest_files=[ "res://.import/Whole of the Slice[Sad Combat Music_]LOOP-NO INTRO.wav-07e12c35bd652a2854a77d727452409f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

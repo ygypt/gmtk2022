@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Bowl of the Spice[Main Combat]LOOP-NO INTRO.wav-9f6cd2badc0f2353483e34b1e4ed8925.sample"
+
+[deps]
+
+source_file="res://Music/Bowl of the Spice[Main Combat]LOOP-NO INTRO.wav"
+dest_files=[ "res://.import/Bowl of the Spice[Main Combat]LOOP-NO INTRO.wav-9f6cd2badc0f2353483e34b1e4ed8925.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
