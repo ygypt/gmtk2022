@@ -128,7 +128,7 @@ position = Vector2( 65, 65 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 hframes = 37
-frame = 33
+frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Sprite"]
 anims/HealthOneToTwo = SubResource( 1 )
@@ -157,7 +157,6 @@ margin_top = 4.0
 margin_right = 36.0
 margin_bottom = 35.0
 grow_horizontal = 0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 8 )
 text = "10"
 align = 1
