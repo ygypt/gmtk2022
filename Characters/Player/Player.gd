@@ -4,7 +4,8 @@ func get_class(): return "Player"
 func is_class(name): return name == "Player"
 
 onready var anims : AnimationPlayer = $AnimationPlayer
-onready var weapon : Weapon = $Pistol
+onready var weapon : Weapon = $Rifle
+onready var sprite : Sprite = $Sprite
 onready var can_shoot := true
 onready var GUI := $PlayerCamera/GUI
 onready var hurt_angle := 0.0

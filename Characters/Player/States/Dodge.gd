@@ -19,6 +19,7 @@ func enter(entity) -> Node:
 
 func exit(entity):
 	entity.can_shoot = true
+	entity.sprite.rotation_degrees = 0
 	.exit(entity)
 
 func step(entity) -> Node:

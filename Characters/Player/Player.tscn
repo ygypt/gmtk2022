@@ -6,9 +6,9 @@
 [ext_resource path="res://Characters/Player/States/Move.gd" type="Script" id=4]
 [ext_resource path="res://Characters/Player/States/Dodge.gd" type="Script" id=5]
 [ext_resource path="res://Characters/Player/States/Hurt.gd" type="Script" id=6]
-[ext_resource path="res://Weapons/Pistol/Pistol.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Characters/Player/PlayerCamera.gd" type="Script" id=8]
 [ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Weapons/Rifle/Rifle.tscn" type="PackedScene" id=10]
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 0.999996
@@ -29,6 +29,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 3 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.166667 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -182,8 +194,8 @@ script = ExtResource( 6 )
 wait_time = 0.1
 one_shot = true
 
-[node name="Pistol" parent="." instance=ExtResource( 7 )]
-position = Vector2( 0, -2 )
+[node name="Rifle" parent="." instance=ExtResource( 10 )]
+position = Vector2( 0, -4 )
 
 [node name="Hurtbox" type="Area2D" parent="."]
 collision_layer = 0
