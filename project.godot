@@ -58,6 +58,7 @@ config/icon="res://icon.png"
 
 ProjectileManager="*res://Projectiles/ProjectileManager.gd"
 Scoreboard="*res://scoreboard.gd"
+Recording="*res://Recording/Recording.gd"
 
 [display]
 

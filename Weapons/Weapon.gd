@@ -9,7 +9,7 @@ onready var reload_timer : Timer = $ReloadTimer
 onready var firerate_timer : Timer = $FirerateTimer
 #onready var semiauto_timer : Timer = $SemiautoTimer
 var cursor_lposition : Vector2
-const MOUSE_CAM_MOD : float = 0.05
+const MOUSE_CAM_MOD : float = 0.075
 export var y_offset := 0
 
 export var total_ammo := 1

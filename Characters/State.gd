@@ -13,4 +13,3 @@ func exit(entity) -> Node:
 
 func step(entity) -> Node:
 	return null
-
