@@ -6,6 +6,7 @@
 
 [node name="Rifle" type="Node2D"]
 script = ExtResource( 3 )
+y_offset = 4
 total_ammo = 25
 auto = true
 

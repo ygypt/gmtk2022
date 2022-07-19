@@ -31,4 +31,4 @@ func step(entity):
 	rotation = entity.look_angle
 	$Sprite.flip_v = !(entity.look_angle <=  PI / 2 && entity.look_angle > -(PI / 2))
 	cursor_lposition = entity.get_local_mouse_position()
-	global_position = entity.global_position + (cursor_lposition * MOUSE_CAM_MOD)
+	global_position = entity.global_position + (cursor_lposition * MOUSE_CAM_MOD) + Vector2(0,-y_offset)
