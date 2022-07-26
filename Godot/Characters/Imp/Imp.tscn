@@ -1,0 +1,87 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Characters/Imp/Imp.gd" type="Script" id=1]
+[ext_resource path="res://Characters/Imp/Sprites/imp2.png" type="Texture" id=2]
+[ext_resource path="res://Characters/Imp/States/Chase.gd" type="Script" id=3]
+[ext_resource path="res://Characters/Imp/States/Cast.gd" type="Script" id=4]
+
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 5.99999
+height = 4.00002
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "chase",
+"speed": 3.0
+}, {
+"frames": [ SubResource( 10 ) ],
+"loop": true,
+"name": "cast",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 12.0
+height = 4.66667
+
+[node name="Imp" type="KinematicBody2D"]
+scale = Vector2( 0.6, 0.6 )
+collision_layer = 2
+collision_mask = 7
+script = ExtResource( 1 )
+health = 10
+speed = 50
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -3 )
+rotation = 1.5708
+shape = SubResource( 6 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -16 )
+frames = SubResource( 4 )
+animation = "chase"
+frame = 1
+playing = true
+
+[node name="State" type="Node" parent="."]
+
+[node name="Chase" type="Node" parent="State"]
+script = ExtResource( 3 )
+
+[node name="Cast" type="Node" parent="State"]
+script = ExtResource( 4 )
+
+[node name="CastTimer" type="Timer" parent="State/Cast"]
+wait_time = 0.4
+one_shot = true
+
+[node name="ProjHurtbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProjHurtbox"]
+position = Vector2( 0, -17.6667 )
+shape = SubResource( 5 )
+
+[node name="CastCooldown" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
